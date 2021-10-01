@@ -1,4 +1,4 @@
-# Rossiam Smartthings
+# Test Smartthings Homebrew Tab
 
 ## How do I install these formulae?
 
