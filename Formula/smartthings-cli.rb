@@ -4,7 +4,7 @@ class SmartthingsCli < Formula
   desc "CLI for developing with SmartThings"
   homepage "https://github.com/SmartThingsCommunity/smartthings-cli"
   url "https://registry.npmjs.org/@smartthings/cli/-/cli-0.0.0-pre.31.tgz"
-  sha256 "7a9f2ec0a6c67f9cbef44ba4571a6050a1a65a5b04c7800879ffda71ee8a59bb"
+  sha256 "4998fd9b988ebe56017ce04cd9e3546f7c531139319fd049bc60975d251aa262"
   license "Apache-2.0"
 
   depends_on "node@16"
