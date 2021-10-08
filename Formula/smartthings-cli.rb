@@ -3,7 +3,7 @@ require "language/node"
 class SmartthingsCli < Formula
   desc "CLI for developing with SmartThings"
   homepage "https://github.com/SmartThingsCommunity/smartthings-cli"
-  url "https://registry.npmjs.org/@smartthings/cli/-/cli-0.0.0-pre.30.tgz"
+  url "https://registry.npmjs.org/@smartthings/cli/-/cli-0.0.0-pre.31.tgz"
   sha256 "7a9f2ec0a6c67f9cbef44ba4571a6050a1a65a5b04c7800879ffda71ee8a59bb"
   license "Apache-2.0"
 
@@ -16,6 +16,6 @@ class SmartthingsCli < Formula
 
   test do
     version_info = pipe_output("#{bin}/smartthings --version").split[0]
-    assert version_info == "@smartthings/cli/0.0.0-pre.30"
+    assert version_info == "@smartthings/cli/0.0.0-pre.31"
   end
 end
