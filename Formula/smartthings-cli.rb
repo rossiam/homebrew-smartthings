@@ -7,7 +7,7 @@ class SmartthingsCli < Formula
   sha256 "7a9f2ec0a6c67f9cbef44ba4571a6050a1a65a5b04c7800879ffda71ee8a59bb"
   license "Apache-2.0"
 
-  depends_on "node@14"
+  depends_on "node@16"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
