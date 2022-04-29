@@ -16,6 +16,6 @@ class SmartthingsCli < Formula
 
   test do
     version_info = pipe_output("#{bin}/smartthings --version").split[0]
-    assert version_info == "@smartthings/cli/0.0.0-pre.31"
+    assert version_info == "@smartthings/cli/1.0.0-beta.5"
   end
 end
