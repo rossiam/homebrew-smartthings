@@ -3,8 +3,8 @@ require "language/node"
 class SmartthingsCli < Formula
   desc "CLI for developing with SmartThings"
   homepage "https://github.com/SmartThingsCommunity/smartthings-cli"
-  url "https://registry.npmjs.org/@smartthings/cli/-/cli-0.0.0-pre.31.tgz"
-  sha256 "4998fd9b988ebe56017ce04cd9e3546f7c531139319fd049bc60975d251aa262"
+  url "https://registry.npmjs.org/@smartthings/cli/-/cli-1.0.0-beta.5.tgz"
+  sha256 "e9e0f8c9c73245483b3f0eda4d57e2232fb365ea487ef3c8c4f07f1580476f1f"
   license "Apache-2.0"
 
   depends_on "node@16"
