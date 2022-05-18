@@ -3,15 +3,50 @@ require "language/node"
 class SmartthingsCli < Formula
   desc "CLI for developing with SmartThings"
   homepage "https://github.com/SmartThingsCommunity/smartthings-cli"
-  url "https://registry.npmjs.org/@smartthings/cli/-/cli-1.0.0-beta.5.tgz"
-  sha256 "e9e0f8c9c73245483b3f0eda4d57e2232fb365ea487ef3c8c4f07f1580476f1f"
+  version '1.0.0-beta.5'
+  url "file:///dev/null"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "Apache-2.0"
 
   depends_on "node@16"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    # puts "libexec = #{libexec}"
+    # args_array = Language::Node.std_npm_install_args(libexec)
+    # puts "args_array = #{args_array}"
+    # args = args_array.join(' ')
+    # puts "args = #{args}"
+    # stdout, stderr, status = Open3.capture3("pwd")
+    # puts("pwd = #{stdout}")
+    # stdout, stderr, status = Open3.capture3("npm --version")
+    # puts("npm version = #{stdout}")
+    (libexec/"lib").mkpath
+    # puts "*** AT START: npm ls -g\n\n"
+    # stdout, stderr, status = Open3.capture3("npm ls --global --prefix=#{libexec}")
+    # puts(stdout)
+    # system "npm", "ls", "--global", "--prefix=#{libexec}"
+    # puts "\n\ninstalling typescript\n\n"
+    # system "npm", "install", "--global", "--prefix=#{libexec}", "typescript@4.5.4"
+    # puts "\n\n*** AFTER TS INSTALL: npm ls -g\n\n"
+    # stdout, stderr, status = Open3.capture3("npm ls --global --prefix=#{libexec}")
+    # puts(stdout)
+    # system "npm", "ls", "--global", "--prefix=#{libexec}"
+    # puts "\n\ninstalling oclif\n\n"
+    # system "npm", "install", "--global", "--prefix=#{libexec}", "oclif"
+    # puts "\n\n*** AFTER oclif INSTALL: npm ls -g\n\n"
+    # stdout, stderr, status = Open3.capture3("npm ls --global --prefix=#{libexec}")
+    # puts(stdout)
+    # system "npm", "ls", "--global", "--prefix=#{libexec}"
+    # puts "\n\n*** installing now:\n\n"
+    # stdout, stderr, status = Open3.capture3("npm install #{args}")
+    system "npm", "install", "--global", "--prefix=#{libexec}", "@smartthings/cli@1.0.0-beta.5"
+    # stdout, stderr, status = Open3.capture3("npm install #{Language::Node.std_npm_install_args(libexec).join(' ')}")
+    # puts "\n\ninstall status = #{status}"
+    # puts "\n\ninstall stdout:\n#{stdout}"
+    # puts "\n\ninstall stderr:\n#{stderr}"
+    # system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    # puts "*** finished npm install; doing link"
+    bin.install_symlink Dir["#{libexec}/bin/smartthings"]
   end
 
   test do
