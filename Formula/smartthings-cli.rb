@@ -18,6 +18,9 @@ class SmartthingsCli < Formula
     # puts "args = #{args}"
     # stdout, stderr, status = Open3.capture3("pwd")
     # puts("pwd = #{stdout}")
+    # stdout = Open3.capture3("which node")
+    node_bin = `which node`
+    puts("node at: #{node_bin}")
     # stdout, stderr, status = Open3.capture3("npm --version")
     # puts("npm version = #{stdout}")
     (libexec/"lib").mkpath
@@ -46,6 +49,7 @@ class SmartthingsCli < Formula
     # puts "\n\ninstall stderr:\n#{stderr}"
     # system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     # puts "*** finished npm install; doing link"
+    inreplace "#{libexec}/bin/smartthings", "#!/usr/bin/env node", "#!#{node_bin}"
     bin.install_symlink Dir["#{libexec}/bin/smartthings"]
   end
 
